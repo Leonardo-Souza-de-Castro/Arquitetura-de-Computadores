@@ -1,0 +1,17 @@
+ORG 0000H
+
+MOV R1, #20H
+
+MOV A, R0
+
+MOV 40H, #30H
+
+MOV B, R1
+
+MOV R3, B
+
+INC R3
+
+DEC 40H
+
+CLR A
