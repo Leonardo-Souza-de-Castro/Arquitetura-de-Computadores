@@ -1,0 +1,20 @@
+	ORG 0000H
+	LJMP INICIO
+
+	ORG 0100H
+INICIO:
+
+	MOV A, #10
+	MOV B, #20
+	ACALL SOMA
+
+	SJMP $
+
+
+
+
+
+SOMA:	ADD A,B
+			CPL A
+			RL A
+			RET
