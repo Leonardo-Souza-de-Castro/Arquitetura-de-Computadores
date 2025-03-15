@@ -1,0 +1,63 @@
+1) Calcule quanto tempo será gasto por esta subrotina, considerando um cristal de 12MHz?
+
+
+CLR -> 1 MC
+primeiro MOV -> 1 MC
+DJNZ -> 2 MC (127 vezes)
+segundo MOV -> 1 MC (127 vezes)
+RET -> 2 MC
+
+Resposta:
+
+O tempo para essa execução é de 385 microssegundos.
+
+2) Os dois programas abaixo fazem a mesma tarefa, zerar os registradores R5 e R6. Compare as duas soluções com relação ao tamanho de programa e tempo de execução.
+
+Primeiro programa:
+
+MOV R6, #0 -> 1 MC
+MOV R5, #0 -> 1 MC
+
+Tempo de execução = 2/10^6 = 2 microssegundos
+
+Segundo programa:
+CLR A -> 1 MC
+MOV R6, A -> 1 MC
+MOV R5, A -> 1 MC
+
+Tempo de execução = 3/10^6 = 3 microssegundos
+
+Nesse caso o primeiro código tem melhor desempenho em questão de tempo de execução (MC).
+
+3) Escreva uma subrotina para consumir 500 μs, ou seja, que gere um intervalo de tempo de 500 μs, considerando que se usa um cristal de 12 MHz.
+
+ORG 0000H
+
+LJMP INICIO
+
+ORG 0100H 
+INICIO:
+
+ACALL TESTE
+
+
+TESTE:
+	MOV R7, #248
+ROT:
+	DJNZ R7, ROT
+NOP
+RET
+
+5) Os 3 programas a seguir apresenta três possíveis soluções para o problema de se zerarem os oito registradores [R7, ... R0] do banco 0. Compare as soluções levando em conta o tamanho do programa e tempo de execução.
+
+Soluçao 1:
+MOV R7, #0 -> 1 MC
+MOV R6, #0 -> 1 MC
+MOV R5, #0 -> 1 MC
+MOV R4, #0 -> 1 MC
+MOV R3, #0 -> 1 MC
+MOV R2, #0 -> 1 MC
+MOV R1, #0 -> 1 MC
+MOV R0, #0 -> 1 MC
+
+Tempo de execução = 8/10^6 = 8 microssegundos.
