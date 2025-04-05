@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	ORG 0000H
 	LJMP INICIO
 
@@ -23,3 +24,30 @@ MAIOR:
 
 
 
+=======
+	ORG 0000H
+	LJMP INICIO
+
+	ORG 0100H
+INICIO:
+
+	MOV R7, #11
+	MOV R6, #10
+
+	MOV A, R6
+	SUBB A, R7
+
+	JZ IGUAIS
+	JNC MAIOR
+
+IGUAIS:
+	JMP $
+MAIOR:
+	MOV A, R6
+	MOV B, R7
+	MOV R6, B
+	MOV R7, A
+
+
+
+>>>>>>> 63a51d8d829a07e40c92bc4b31bbb9ceb31c14eb

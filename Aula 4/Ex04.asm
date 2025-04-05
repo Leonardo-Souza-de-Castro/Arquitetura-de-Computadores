@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	ORG 0000H
 	LJMP INICIO
 
@@ -12,3 +13,19 @@ LABEL:
 
 	SJMP $
 
+=======
+	ORG 0000H
+	LJMP INICIO
+
+	ORG 0100H
+INICIO:
+	CLR A
+	MOV R0, #127
+
+LABEL:
+	MOV @R0, A
+	DJNZ R0, LABEL
+
+	SJMP $
+
+>>>>>>> 63a51d8d829a07e40c92bc4b31bbb9ceb31c14eb
