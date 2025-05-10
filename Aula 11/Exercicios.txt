@@ -1,0 +1,150 @@
+1) Um programa de benchmark é executado em um processador a 40 MHz. O programa executado consiste
+em 100000 execuções de instrução, com os seguintes tipos de instruções e número de ciclos de clock:
+
+Tipo de instrução: 	Número de instruções: 	Ciclos por instrução:
+Aritmética de inteiros 	45000 			1
+Transferência de dados 	32000 			2
+Ponto flutuante 	15000 			2
+Controle de fluxo  	8000 			2
+
+Determine o CPI efetivo, a taxa de MIPS e o tempo de execução para esse programa.
+
+t -> 1/ 40*10^6
+CPI efetivo -> (45000+64000+30000+16000)/100000 = 1,55
+
+MIPS = 40*10^6/1,55*10^6
+MIPS = 40/1,55
+MIPS = 25,81
+
+tempo de execução -> (45*1,55 + 32*1,55 + 15*1,55 + 8*1,55)*10^3/40*10^6
+tempo de execução -> 155*10^3/40*10^6
+tempo de execução -> 155/40*10^3
+tempo de execução -> 0,0038 s
+
+----------------------------------------------------------------------------------------------------
+
+2) Considere duas máquinas diferentes, com dois conjuntos de instruções diferentes, ambos tendo uma
+frequência do clock de 200 MHz. As medições a seguir são registradas nas duas máquinas executando um
+determinado conjunto de programas de benchmark:
+
+Tipo de instrução: 	Número de instruções (milhões): 	Ciclos por tipo de instrução
+Máquina A
+Aritmética e lógica 	8					1
+Load e store 		4 					3
+Desvios 		2 					4
+Outros 			4 					3
+
+Máquina B
+Aritmética e lógica 	10 					1
+Load e store 		8 					2
+Desvios 		2 					4
+Outros 			4 					3
+
+Determine o CPI efetivo, a taxa MIPS e o tempo de execução para cada máquina.
+
+CPI Efetivo (maquina A) -> (8+4*3+2*4+4*3)*10^6/(8+4+2+4)*10^6
+CPI Efetivo (maquina A) -> (8+4*3+2*4+4*3)/(8+4+2+4)
+CPI Efetivo (maquina A) -> 40/18
+CPI Efetivo (maquina A) -> 2,22
+
+MIPS = 200*10^6/2,22*10^6
+MIPS = 200/2,22
+MIPS = 90,1
+
+tempo de execução -> (8*2,22 + 4*2,22 + 2*2,22 + 4*2,22)*10^6/200*10^6
+tempo de execução -> (8*2,22 + 4*2,22 + 2*2,22 + 4*2,22)/200
+tempo de execução -> 39,96/200
+tempo de execução -> 0,1998 s
+----------------------------------------------------------------------------------------------------
+CPI Efetivo (maquina B) -> (10+8*2+2*4+4*3)*10^6/(10+8+2+4)*10^6
+CPI Efetivo (maquina B) -> (10+8*2+2*4+4*3)/(10+8+2+4)
+CPI Efetivo (maquina B) -> 46/24
+CPI Efetivo (maquina B) -> 1,92
+
+MIPS = 200*10^6/1,92*10^6
+MIPS = 200/1,92
+MIPS = 104,16
+
+tempo de execução -> (10*1,92 + 8*1,92 + 2*1,92 + 4*1,92)*10^6/200*10^6
+tempo de execução -> (10*1,92 + 8*1,92 + 2*1,92 + 4*1,92)/200
+tempo de execução -> 46,08/200
+tempo de execução -> 0,2304 s
+
+----------------------------------------------------------------------------------------------------
+
+3) Quatro programas de benchmark são executados em três computadores com os seguintes
+resultados:
+		Computador A 	Computador B 	Computador C
+Programa 1: 	1 		10 		20
+Programa 2: 	1000 		100 		20
+Programa 3: 	500 		1000 		50
+Programa 4: 	100 		800 		100
+
+A tabela mostra o tempo de execução em segundos, com 100000000 de instruções executadas em cada um dos
+quatro programas. Calcule os valores em MIPS para cada computador para cada programa.
+
+Programa 1:
+
+Computador A:
+MIPS = 10^8/1*10^6
+MIPS = 10^2/1
+MIPS = 100
+
+Computador B:
+MIPS = 10^8/10^7
+MIPS = 10^1/1
+MIPS = 10
+
+Computador C:
+MIPS = 10^8/2*10^7
+MIPS = 10^1/2
+MIPS = 5
+-------------------------------------
+Programa 2:
+
+Computador A:
+MIPS = 10^8/10^9
+MIPS = 1/10^1
+MIPS = 0,1
+
+Computador B:
+MIPS = 10^8/10^8
+MIPS = 1
+
+Computador C:
+MIPS = 10^8/2*10^7
+MIPS = 10^1/2
+MIPS = 5
+-------------------------------------
+Programa 3:
+
+Computador A:
+MIPS = 10^8/5*10^8
+MIPS = 1/5
+MIPS = 0,20
+
+Computador B:
+MIPS = 10^8/10^9
+MIPS = 1/10^1
+MIPS = 0,1
+
+Computador C:
+MIPS = 10^8/5*10^7
+MIPS = 10^1/5
+MIPS = 2
+-------------------------------------
+Programa 4:
+
+Computador A:
+MIPS = 10^8/10^8
+MIPS = 1
+
+Computador B:
+MIPS = 10^8/8*10^8
+MIPS = 1/8
+MIPS = 0,125
+
+Computador C:
+MIPS = 10^8/10^8
+MIPS = 1
+
